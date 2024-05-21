@@ -5,3 +5,31 @@
     --red: #dc0a17;
     --green: #2FC022;
 }
+
+@font-face {
+    font-family: 'gotham-black';
+    src: url('/assets/gotham-black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'gotham-bold';
+    src: url('/assets/gotham-bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'gotham-book';
+    src: url('/assets/gotham-book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'gotham-light';
+    src: url('/assets/gotham-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
