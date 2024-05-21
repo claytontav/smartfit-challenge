@@ -1,6 +1,2 @@
 @import url('application.css');
 
-h1 {
-    color: var(--light-grey);
-    font-family: 'gotham-bold';
-}
