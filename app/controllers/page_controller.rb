@@ -1,14 +1,15 @@
 class PageController < ApplicationController
   def index
-    response = GetDataJson.new.call
-    @data_developer = JSON.parse(response)
+    @data_developer = JSON.parse(GetDataJson.new.call)
   end
 
   def create 
-    @period = params[:period]
-    @units = params[:units]
+    period = params[:period]
+    units = params[:units]
 
-    puts @period
-    puts @units
+    data_developer = JSON.parse(GetDataJson.new.call)
+    filtered_data = ValidadSchedules.new(data_developer, period, units).call
+    
+    puts filtered_data
   end
 end
