@@ -1,7 +1,7 @@
 @import url('application.css');
 
 .container {
-    width: 80%;
+    width: 70%;
 }
 
 /* HEADER */
@@ -37,5 +37,89 @@ header img {
 .content h3 {
     font-family: gotham-light;
     color: var(--dark-grey);
+    font-size: 1rem;
+}
+
+/* FORM */
+form {
+    border: 3px solid var(--text-light);
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+form .form_title, form .form_group {
+    width: 100%;
+    border-bottom: 2px solid var(--text-light);
+    padding: 10px 0;
+}
+
+form .form_title span {
+    font-family: gotham-light;
+    color: var(--dark-grey);
     font-size: 1.3rem;
+}
+
+form .form_group {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .form_group span, form .form_group label {
+    font-family: gotham-light;
+    color: var(--dark-grey);
+    font-size: 1rem;
+}
+
+.icon-hour {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-hour img {
+    height: 25px;
+    margin-right: 5px;
+}
+
+.icon-hour span {
+    font-family: gotham-light;
+    color: var(--dark-grey);
+    font-size: .8rem;
+}
+
+form .form_group_check {
+    font-family: gotham-light;
+    color: var(--dark-grey);
+    font-size: .8rem;
+    margin: 30px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form .form_group_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+form .form_group_buttons button, form .form_group_buttons input[type='submit'] {
+    width: 30%;
+    padding: 15px 0;
+    font-family: gotham-black;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+form .form_group_buttons input[type='submit'] {
+    border: none;
+    background-color: var(--yellow);
+}
+
+form .form_group_buttons button {
+    border: 2px solid var(--text-light);
+    background-color: transparent;
 }

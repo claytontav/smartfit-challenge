@@ -1,0 +1,41 @@
+<%= form_with url: page_create_path, method: :post do |form| %>
+    <div class="icon-hour">
+        <%= image_tag 'icon-hour.png', alt: 'Hour icon' %>
+        <span>Horário</span>
+    </div>
+    <div class="form_title">
+        <span>Qual período quer treinar?</span>
+    </div>
+    <div class="form_group">
+        <div>
+            <%= form.radio_button :period, "morning" %>
+            <%= label_tag :period, "Manhã" %>
+        </div>
+        <span>06:00 ás 12:00</span>
+    </div>
+    <div class="form_group">
+        <div>
+            <%= form.radio_button :period, "afternoon" %>
+            <%= label_tag :period, "Tarde" %>
+        </div>
+        <span>12:01 ás 18:00</span>
+    </div>
+    <div class="form_group">
+        <div>
+            <%= form.radio_button :period, "night" %>
+            <%= label_tag :period, "Noite" %>
+        </div>
+        <span>18:01 ás 23:00</span>
+    </div>
+    <div class="form_group_check">
+        <div>
+            <%= form.check_box :units, checked: true %>
+            <%= label_tag :units, "Exibir unidades fechadas" %>
+        </div>
+        <span>Resultados encontrados <strong>0</strong></span>
+    </div>
+    <div class="form_group_buttons">
+        <%= form.submit "Encontrar unidade" %>
+        <%= form.button "Limpar", type: 'button', onclick: 'clearForm()' %>
+    </div>
+<% end %>
