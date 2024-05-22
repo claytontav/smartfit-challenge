@@ -1,5 +1,7 @@
 class PageController < ApplicationController
   def index
+    response = GetDataJson.new.call
+    @data_developer = JSON.parse(response)
   end
 
   def create 
