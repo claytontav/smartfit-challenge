@@ -10,6 +10,6 @@ class PageController < ApplicationController
     data_developer = JSON.parse(GetDataJson.new.call)
     filtered_data = ValidadSchedules.new(data_developer, period, units).call
     
-    puts filtered_data
+    ActionCable.server.broadcast 'channel_schedule', filtered_data
   end
 end
