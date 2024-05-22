@@ -112,6 +112,11 @@ form .form_group_buttons button, form .form_group_buttons input[type='submit'] {
     font-family: gotham-black;
     text-transform: uppercase;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+form .form_group_buttons button:hover, form .form_group_buttons input[type='submit']:hover {
+    opacity: .8;
 }
 
 form .form_group_buttons input[type='submit'] {
