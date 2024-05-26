@@ -139,6 +139,7 @@ form .form_group_buttons button {
 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .descriptions-group div span {
