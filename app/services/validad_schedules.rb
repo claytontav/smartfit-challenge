@@ -38,9 +38,12 @@ class ValidadSchedules
     result_locations = data_developer['locations']
 
     filtered_locations = result_locations.map do |location|
+      next unless location.key?('id') && location.key?('schedules')
+      
       filtered_schedules = location['schedules'].select do |schedule| 
-        if schedule['hour'] != 'Fechada' 
+        if schedule['hour'] != 'Fechada' && schedule['hour'].nil?
           schedule_start_time, schedule_end_time = schedule['hour'].split(' às ')
+          byebug
           start_time = schedule_start_time.gsub(/(\d{2})h/, '\1:00')
           end_time = schedule_end_time.gsub(/(\d{2})h/, '\1:00')
 
