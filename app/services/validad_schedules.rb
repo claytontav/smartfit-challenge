@@ -42,15 +42,18 @@ class ValidadSchedules
       next unless location.key?('id') && location.key?('schedules')
 
       filtered_schedules = location['schedules'].select do |schedule|
-        if schedule['hour'] != 'Fechada' && schedule['hour'].nil?
+        if schedule['hour'] != 'Fechada' && schedule['hour'] != nil && schedule['weekdays'] != 'Obs.:'
           schedule_start_time, schedule_end_time = schedule['hour'].split(' às ')
-          byebug
           start_time = schedule_start_time.gsub(/(\d{2})h/, '\1:00')
           end_time = schedule_end_time.gsub(/(\d{2})h/, '\1:00')
 
           time_within_period?(start_time, end_time, @period)
-        elsif @units && schedule['hour'] == 'Fechada'
+        elsif schedule['weekdays'] == 'Obs.:'
           true
+        elsif schedule['hour'] == 'Fechada'
+          if @units == '1'
+            true
+          end
         end
       end
 

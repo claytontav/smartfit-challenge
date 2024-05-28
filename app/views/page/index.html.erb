@@ -3,4 +3,16 @@
 <%= render 'components/header' %>
 <%= render 'components/content' %>
 <%= render 'components/descriptions' %>
+
+<section id="content_cards" class="content_cards">
+    <% if @data_developer.count > 0 %>
+        <% @data_developer.each do |data| %>
+            <div class="card_locations">
+            <h3><%= data['title'] %></h3>
+            <p><%= data['schedules'] %></p>
+            </div>
+        <% end %>
+    <% end %>
+</section>
+
 <%= render 'components/footer' %>

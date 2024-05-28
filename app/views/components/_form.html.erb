@@ -8,7 +8,7 @@
     </div>
     <div class="form_group">
         <div>
-            <%= form.radio_button :period, "morning" %>
+            <%= form.radio_button :period, "morning", checked: true %>
             <%= label_tag :period, "Manhã" %>
         </div>
         <span>06:00 ás 12:00</span>
@@ -32,11 +32,10 @@
             <%= form.check_box :units, checked: true %>
             <%= label_tag :units, "Exibir unidades fechadas" %>
         </div>
-        <span>Resultados encontrados <strong><%= @data_developer['total'] %></strong></span>
+        <span>Resultados encontrados: <strong><%= @data_developer.count %></strong></span>
     </div>
     <div class="form_group_buttons">
         <%= form.submit "Encontrar unidade" %>
-        <%= form.button "Limpar", type: 'button', onclick: 'clearForm()' %>
     </div>
 <% end %>
 

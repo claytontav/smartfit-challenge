@@ -1,6 +1,12 @@
 class PageController < ApplicationController
   def index
-    @data_developer = JSON.parse(GetDataJson.new.call)
+    if FilteredDatum.count > 0
+      @data_developer = JSON.parse(FilteredDatum.last.data)
+    else
+      @data_developer = []
+    end
+
+    FilteredDatum.destroy_all
   end
 
   def create
@@ -10,6 +16,8 @@ class PageController < ApplicationController
     data_developer = GetDataJson.new.call
     filtered_data = ValidadSchedules.new(data_developer, period, units).call
 
-    ActionCable.server.broadcast 'channel_schedule', filtered_data
+    filtered_data_record = FilteredDatum.create(data: filtered_data.to_json)
+
+    redirect_to root_path
   end
 end

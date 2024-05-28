@@ -1,6 +1,6 @@
 class PageChannel < ApplicationCable::Channel
   def subscribed
-    stream_from 'channel_schedule'
+    # stream_from 'channel_schedule'
   end
 
   def unsubscribed
