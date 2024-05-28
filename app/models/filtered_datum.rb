@@ -1,0 +1,2 @@
+class FilteredDatum < ApplicationRecord
+end
