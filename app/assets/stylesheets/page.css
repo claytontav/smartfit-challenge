@@ -198,7 +198,57 @@ footer img {
 }
 
 .card_locations {
-    width: 30%;
+    width: 240px;
     background-color: var(--text-light);
     padding: 15px 30px;
+}
+
+.opened_open {
+    font-family: 'gotham-black';
+    font-size: .7rem;
+    color: var(--green);
+}
+
+.opened_close {
+    font-family: 'gotham-black';
+    font-size: .7rem;
+    color: var(--red);
+}
+
+.card_locations div h3 {
+    font-family: 'gotham-black';
+    font-size: 1rem;
+    color: var(--dark-grey);
+    margin: 5px 0;
+}
+
+.card_locations div p {
+    font-family: 'gotham-book';
+    font-size: .8rem;
+    color: var(--light-grey);
+}
+
+.card_locations .schedule_content {
+    display: grid;
+    gap: 8px;
+}
+
+.card_locations .schedule_content .schedule_weekdays {
+    font-family: 'gotham-black';
+    font-size: .8rem;
+    color: var(--dark-grey);
+}
+
+.schedule_hour {
+    font-family: 'gotham-book';
+    font-size: .8rem;
+    color: var(--light-grey);
+}
+
+.content_img {
+    margin-bottom: 20px;
+}
+
+.content_img img {
+    height: 40px;
 }

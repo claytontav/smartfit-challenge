@@ -1,0 +1,52 @@
+<section class="content_cards">
+    <% @data_developer.each do |data| %>
+        <div class="card_locations">
+            <div>
+                <% if data['opened'] == true %>
+                    <span class="opened_open">Aberto</span>
+                <% else %>
+                    <span class="opened_close">Fechado</span>
+                <% end %>
+                <h3><%= data['title'] %></h3>
+                <p><%= data['content'].html_safe %></p>
+            </div>
+            <% if data['opened'] == true %>
+                <br><hr><br>
+                <div class="content_img">
+                    <% if data['mask'] == 'required' %>
+                        <%= image_tag 'required-mask.png', alt: 'icone de mascara obrigatorio' %>
+                    <% elsif data['mask'] == 'recommended' %>
+                        <%= image_tag 'recommended-mask.png', alt: 'icone de mascara obrigatorio' %>
+                    <% end %>
+
+                    <% if data['towel'] == 'required' %>
+                        <%= image_tag 'required-towel.png', alt: 'icone de mascara obrigatorio' %>
+                    <% elsif data['towel'] == 'recommended' %>
+                        <%= image_tag 'recommended-towel.png', alt: 'icone de mascara obrigatorio' %>
+                    <% end %>
+
+                    <% if data['fountain'] == 'partial' %>
+                        <%= image_tag 'partial-fountain.png', alt: 'icone de mascara obrigatorio' %>
+                    <% elsif data['fountain'] == 'not_allowed' %>
+                        <%= image_tag 'forbidden-fountain.png', alt: 'icone de mascara obrigatorio' %>
+                    <% end %>
+
+                    <% if data['locker_room'] == 'partial' %>
+                        <%= image_tag 'required-lockerroom.png', alt: 'icone de mascara obrigatorio' %>
+                    <% elsif data['locker_room'] == 'allowed' %>
+                        <%= image_tag 'partial-lockerroom.png', alt: 'icone de mascara obrigatorio' %>
+                    <% elsif data['locker_room'] == 'closed' %>
+                        <%= image_tag 'forbidden-lockerroom.png', alt: 'icone de mascara obrigatorio' %>
+                    <% end %>
+                    
+                </div>
+                <div class="schedule_content">
+                    <% data['schedules'].each do |sch| %>
+                        <p class="schedule_weekdays"><%= sch['weekdays'] %></p>
+                        <p class="schedule_hour"><%= sch['hour'] %></p>
+                    <% end %>
+                </div>
+             <% end %>
+        </div>
+    <% end %>
+</section>
